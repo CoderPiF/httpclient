@@ -1,0 +1,12 @@
+if(BUILD_DLL)
+    add_definitions(-DHTTPCLIENT_DLL_BUILD)
+endif()
+
+install(FILES
+    ${CMAKE_CURRENT_LIST_DIR}/httpclient_export.h
+    ${CMAKE_CURRENT_LIST_DIR}/requests.hpp
+    DESTINATION ${PUBLIC_HEADER_OUTPUT_DIRECTORY}/httpclient
+)
+
+include_directories(../depends/curl/include)
+include_directories(../depends/openssl/include)
